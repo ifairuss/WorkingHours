@@ -19,10 +19,12 @@ public class ButtonActionInterface : MonoBehaviour
 
     [Header("Window components button")]
     [SerializeField] private Button _windowButton;
-    [SerializeField] private Button _allWindowContainerClosedButton;
+    [SerializeField] private MenuButtonAnimations _menuAnimationScript;
 
     [Header("Other")]
     [SerializeField] private GameObject _menuContainer;
+
+    private bool _windowMenuisOpen;
 
     private void Awake()
     {
@@ -31,6 +33,8 @@ public class ButtonActionInterface : MonoBehaviour
 
     public void Initialized()
     {
+        _windowMenuisOpen = false;
+
         ClosedAllWindowOnStart();
 
         AllButtonAction();
@@ -38,7 +42,6 @@ public class ButtonActionInterface : MonoBehaviour
 
     private void ClosedAllWindowOnStart()
     {
-        _allWindowContainerClosedButton.gameObject.SetActive(false);
         _allWindowContainers[0].Window.SetActive(false);
     }
 
@@ -46,17 +49,18 @@ public class ButtonActionInterface : MonoBehaviour
     {
         _windowButton.onClick.AddListener(() =>
         {
-            _allWindowContainerClosedButton.gameObject.SetActive(true);
-            _allWindowContainers[0].Window.SetActive(true);
-        });
-
-        _allWindowContainerClosedButton.onClick.AddListener(() =>
-        {
-            for (int i = 1; i < _menuContainer.transform.childCount; i++)
+            if (!_windowMenuisOpen)
             {
-                _menuContainer.transform.GetChild(i).gameObject.SetActive(false);
+                _allWindowContainers[0].Window.SetActive(true);
+                _windowMenuisOpen=true;
+                _menuAnimationScript.AnimationButton(_windowMenuisOpen);
             }
-            _allWindowContainerClosedButton.gameObject.SetActive(false);
+            else
+            {
+                _allWindowContainers[0].Window.SetActive(false);
+                _windowMenuisOpen = false;
+                _menuAnimationScript.AnimationButton(_windowMenuisOpen);
+            }
         });
     }
 }
