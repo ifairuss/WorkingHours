@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Calendar : MonoBehaviour
 {
@@ -11,6 +12,13 @@ public class Calendar : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _dateText;
     [SerializeField] private TextMeshProUGUI _timeText;
+
+    [Header("Day stats color preferences")]
+    [SerializeField] private Color _workingDayColor;
+    [SerializeField] private Color _weekendDayColor;
+    [SerializeField] private Color _truancyDayColor;
+    [SerializeField] private Color _excessiveDayColor;
+    [SerializeField] private Color _monthsDayColor;
 
     private string Day;
     private string Month;
@@ -36,7 +44,9 @@ public class Calendar : MonoBehaviour
 
         for (int i = 0; i < DayInMounth; i++)
         {
-            _allDayInMonth[i].SetActive(true);
+            Image imageStats = _allDayInMonth[i].GetComponentInChildren<Image>();
+
+            imageStats.color = _monthsDayColor;
         }
     }
 
@@ -44,7 +54,9 @@ public class Calendar : MonoBehaviour
     {
         for (int i = 0; i < _allDayInMonth.Count; i++)
         {
-            _allDayInMonth[i].SetActive(false);
+            Image imageStats = _allDayInMonth[i].GetComponentInChildren<Image>();
+
+            imageStats.color = _excessiveDayColor;
         }
     }
 
