@@ -40,13 +40,15 @@ public class Calendar : MonoBehaviour
 
         _dateText.text = $"{Day}/{Month}/{Year}";
 
-        DayInMounth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+        DayInMounth = DateTime.DaysInMonth(DateTime.Now.Year, 2);
 
         for (int i = 0; i < DayInMounth; i++)
         {
             Image imageStats = _allDayInMonth[i].GetComponentInChildren<Image>();
+            TextMeshProUGUI dateText = _allDayInMonth[i].GetComponentInChildren<TextMeshProUGUI>();
 
             imageStats.color = _monthsDayColor;
+            dateText.color = Color.white;
         }
     }
 
@@ -55,8 +57,10 @@ public class Calendar : MonoBehaviour
         for (int i = 0; i < _allDayInMonth.Count; i++)
         {
             Image imageStats = _allDayInMonth[i].GetComponentInChildren<Image>();
+            TextMeshProUGUI dateText = _allDayInMonth[i].GetComponentInChildren<TextMeshProUGUI>();
 
             imageStats.color = _excessiveDayColor;
+            dateText.color = _excessiveDayColor;
         }
     }
 
