@@ -5,17 +5,25 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
+public class DataFloatApplication
+{
+    public float MoneyToHour;
+    public float TargetMoneyToMonth;
+}
+
+public class DataIntApplication
+{
+    public int TargetHourToMonth;
+}
+
 public class DataFloat
 {
     public float TotalMoneyInMonth;
-    public float MoneyToHour;
-    public float TargetMoneyToMonth;
 }
 
 public class DataInt
 {
     public int MonthToHour;
-    public int TargetHourToMonth;
 }
 
 
@@ -23,16 +31,25 @@ public class WHData : MonoBehaviour
 {
     public static WHData Instance { get; private set; }
 
+    [SerializeField] private string _currency;
+
     [Header("Indicator preferences")]
     [SerializeField] private TextMeshProUGUI _totalHourToMonthTextUI;
     [SerializeField] private TextMeshProUGUI _totalMoneyToMonthTextUI;
+    [SerializeField] private TextMeshProUGUI _targetHourToMonthTextUI;
+    [SerializeField] private TextMeshProUGUI _targetMoneyToMonthTextUI;
     [SerializeField] private Image _timeImage;
     [SerializeField] private Image _moneyImage;
 
     private DataFloat dataFloat = new DataFloat();
+    private DataFloatApplication dataFloatApplication = new DataFloatApplication();
+    private DataIntApplication dataIntApplication = new DataIntApplication();
     private DataInt dataInt = new DataInt();
 
-    private string _fileName = "WHData";
+    private string _fileName;
+    private string _fileNameApplicationSave = "Application Save";
+
+    private string[] _month = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
     private void Awake()
     {
@@ -41,35 +58,37 @@ public class WHData : MonoBehaviour
 
     public void Initialized()
     {
-        dataFloat.TargetMoneyToMonth = 6500;
-        dataFloat.TotalMoneyInMonth = 1543.54f;
+        _fileName = $"{_month[DateTime.Now.Month - 1]}{DateTime.Now.Year}";
 
-        dataInt.MonthToHour = 52;
-        dataInt.TargetHourToMonth = 160;
+        UpdateStats();
     }
 
     public void RatePreferences(int TargetHour, float TargetMoney, float MoneyToHours)
     {
-        dataInt.TargetHourToMonth = TargetHour;
-        dataFloat.MoneyToHour = MoneyToHours;
-        dataFloat.TargetMoneyToMonth = TargetMoney;
-    }
+        dataIntApplication.TargetHourToMonth = TargetHour;
+        dataFloatApplication.MoneyToHour = MoneyToHours;
+        dataFloatApplication.TargetMoneyToMonth = TargetMoney;
 
-    private void Update()
-    {
+        PreferencesSaveData();
+        MonthSaveData();
         UpdateStats();
     }
 
     private void UpdateStats()
     {
-        _totalHourToMonthTextUI.text = dataInt.MonthToHour.ToString();
-        _totalMoneyToMonthTextUI.text = dataFloat.TotalMoneyInMonth.ToString();
+        PreferencesLoadData();
+        MonthLoadData();
 
-        _timeImage.fillAmount = ((float)dataInt.MonthToHour / (float)dataInt.TargetHourToMonth);
-        _moneyImage.fillAmount = (dataFloat.TotalMoneyInMonth / dataFloat.TargetMoneyToMonth);
+        _totalHourToMonthTextUI.text = $"{dataInt.MonthToHour.ToString()}h";
+        _totalMoneyToMonthTextUI.text = $"{dataFloat.TotalMoneyInMonth.ToString()}{_currency}";
+        _targetHourToMonthTextUI.text = $"{dataIntApplication.TargetHourToMonth}h";
+        _targetMoneyToMonthTextUI.text = $"{dataFloatApplication.TargetMoneyToMonth}{_currency}";
+
+        _timeImage.fillAmount = ((float)dataInt.MonthToHour / (float)dataIntApplication.TargetHourToMonth);
+        _moneyImage.fillAmount = (dataFloat.TotalMoneyInMonth / dataFloatApplication.TargetMoneyToMonth);
     }
 
-    public void RatePreferencesSaveData()
+    public void MonthSaveData()
     {
         StreamWriter SWriter = new StreamWriter(Application.persistentDataPath + "/" + _fileName);
 
@@ -85,7 +104,7 @@ public class WHData : MonoBehaviour
         SWriter.Close();
     }
 
-    public void RatePreferencesLoadData()
+    public void MonthLoadData()
     {
         if (File.Exists(Application.persistentDataPath + "/" + _fileName))
         {
@@ -95,6 +114,36 @@ public class WHData : MonoBehaviour
             {
                 dataFloat = JsonUtility.FromJson<DataFloat>(readed[0]);
                 dataInt = JsonUtility.FromJson<DataInt>(readed[1]);
+            }
+        }
+    }
+
+    public void PreferencesSaveData()
+    {
+        StreamWriter SWriter = new StreamWriter(Application.persistentDataPath + "/" + _fileNameApplicationSave);
+
+        string dataFloatSave = JsonUtility.ToJson(dataFloatApplication);
+        string dataIntSave = JsonUtility.ToJson(dataIntApplication);
+
+        print(dataFloatSave);
+        print(dataIntSave);
+
+        SWriter.WriteLine(dataFloatSave);
+        SWriter.WriteLine(dataIntSave);
+
+        SWriter.Close();
+    }
+
+    public void PreferencesLoadData()
+    {
+        if (File.Exists(Application.persistentDataPath + "/" + _fileNameApplicationSave))
+        {
+            string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileNameApplicationSave);
+
+            for (int i = 0; i < readed.Length; i++)
+            {
+                dataFloatApplication = JsonUtility.FromJson<DataFloatApplication>(readed[0]);
+                dataIntApplication = JsonUtility.FromJson<DataIntApplication>(readed[1]);
             }
         }
     }

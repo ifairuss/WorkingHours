@@ -20,9 +20,9 @@ public class Calendar : MonoBehaviour
     [SerializeField] private Color _excessiveDayColor;
     [SerializeField] private Color _monthsDayColor;
 
-    private string Day;
     private string Month;
     private string Year;
+    private string Day;
     private int DayInMounth;
 
     private void Awake()
@@ -40,7 +40,7 @@ public class Calendar : MonoBehaviour
 
         _dateText.text = $"{Day}/{Month}/{Year}";
 
-        DayInMounth = DateTime.DaysInMonth(DateTime.Now.Year, 2);
+        DayInMounth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
 
         for (int i = 0; i < DayInMounth; i++)
         {

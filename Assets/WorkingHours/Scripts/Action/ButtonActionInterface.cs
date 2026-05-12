@@ -19,6 +19,7 @@ public class ButtonActionInterface : MonoBehaviour
 
     [Header("Window components button")]
     [SerializeField] private Button _windowButton;
+    [SerializeField] private Button _preferencesButton;
     [SerializeField] private MenuButtonAnimations _menuAnimationScript;
 
     [Header("Other")]
@@ -43,6 +44,7 @@ public class ButtonActionInterface : MonoBehaviour
     private void ClosedAllWindowOnStart()
     {
         _allWindowContainers[0].Window.SetActive(false);
+        _allWindowContainers[1].Window.SetActive(false);
     }
 
     private void AllButtonAction()
@@ -62,5 +64,7 @@ public class ButtonActionInterface : MonoBehaviour
                 _menuAnimationScript.AnimationButton(_windowMenuisOpen);
             }
         });
+
+        _preferencesButton.onClick.AddListener(() => { _allWindowContainers[1].Window.SetActive(true); });
     }
 }
