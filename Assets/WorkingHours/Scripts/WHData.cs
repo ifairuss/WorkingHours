@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -23,7 +24,17 @@ public class DataFloat
 
 public class DataInt
 {
-    public int MonthToHour;
+    public int HourToMonth;
+}
+
+[Serializable]
+public class DayDataSave
+{
+    public string Name;
+
+    public int Day;
+    public int Times;
+    public char Shift;
 }
 
 
@@ -40,6 +51,9 @@ public class WHData : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _targetMoneyToMonthTextUI;
     [SerializeField] private Image _timeImage;
     [SerializeField] private Image _moneyImage;
+
+    [Header("Day add preferences")]
+    [SerializeField] private List<DayDataSave> _allDayData;
 
     private DataFloat dataFloat = new DataFloat();
     private DataFloatApplication dataFloatApplication = new DataFloatApplication();
@@ -59,8 +73,20 @@ public class WHData : MonoBehaviour
     public void Initialized()
     {
         _fileName = $"{_month[DateTime.Now.Month - 1]}{DateTime.Now.Year}";
+        DayListData();
 
         UpdateStats();
+    }
+
+    private void DayListData()
+    {
+        _allDayData = new List<DayDataSave>(new DayDataSave[DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)]);
+
+        for (int i = 0; i < _allDayData.Count; i++)
+        {
+            _allDayData[i] = new DayDataSave();
+            _allDayData[i].Name = (i+1).ToString();
+        }
     }
 
     public void RatePreferences(int TargetHour, float TargetMoney, float MoneyToHours)
@@ -79,12 +105,12 @@ public class WHData : MonoBehaviour
         PreferencesLoadData();
         MonthLoadData();
 
-        _totalHourToMonthTextUI.text = $"{dataInt.MonthToHour.ToString()}h";
+        _totalHourToMonthTextUI.text = $"{dataInt.HourToMonth.ToString()}h";
         _totalMoneyToMonthTextUI.text = $"{dataFloat.TotalMoneyInMonth.ToString()}{_currency}";
         _targetHourToMonthTextUI.text = $"{dataIntApplication.TargetHourToMonth}h";
         _targetMoneyToMonthTextUI.text = $"{dataFloatApplication.TargetMoneyToMonth}{_currency}";
 
-        _timeImage.fillAmount = ((float)dataInt.MonthToHour / (float)dataIntApplication.TargetHourToMonth);
+        _timeImage.fillAmount = ((float)dataInt.HourToMonth / (float)dataIntApplication.TargetHourToMonth);
         _moneyImage.fillAmount = (dataFloat.TotalMoneyInMonth / dataFloatApplication.TargetMoneyToMonth);
     }
 
