@@ -33,13 +33,20 @@ public class PreferencesAdd : MonoBehaviour
     }
 
     private void SumbitButton()
-    {
-        _moneyToHour = float.Parse(_inputMoneyToHour.text);
-        _targetMoneyToHour = float.Parse(_inputTargetMoneyToHour.text);
-        _targetHourToMonth = int.Parse(_inputTargetHourToMonth.text);
+    {   
+        if(_inputMoneyToHour.text == "" || _inputTargetMoneyToHour.text == "" || _inputTargetHourToMonth.text == "")
+        {
+            _preferencesMenu.SetActive(false);
+        }
+        else
+        {         
+            _moneyToHour = float.Parse(_inputMoneyToHour.text);
+            _targetMoneyToHour = float.Parse(_inputTargetMoneyToHour.text);
+            _targetHourToMonth = int.Parse(_inputTargetHourToMonth.text);
 
-        _data.RatePreferences(_targetHourToMonth, _targetMoneyToHour, _moneyToHour);
+            _data.RatePreferences(_targetHourToMonth, _targetMoneyToHour, _moneyToHour);
 
-        _preferencesMenu.SetActive(false);
+            _preferencesMenu.SetActive(false);
+        }
     }
 }
