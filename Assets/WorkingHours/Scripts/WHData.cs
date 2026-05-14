@@ -36,7 +36,7 @@ public class DayDataSave
     public bool Truancy;
     public int Day;
     public int Times;
-    public char Shift;
+    public char Shift = 'x';
 }
 
 
@@ -55,7 +55,10 @@ public class WHData : MonoBehaviour
     [SerializeField] private Image _moneyImage;
 
     [Header("Day add preferences")]
-    [SerializeField] private List<DayDataSave> _allDayData;
+    public List<DayDataSave> AllDayData;
+
+    [Header("Calendr preferences")]
+    [SerializeField] private Calendar _calendar;
 
     private DataFloat dataFloat = new DataFloat();
     private DataFloatApplication dataFloatApplication = new DataFloatApplication();
@@ -82,23 +85,34 @@ public class WHData : MonoBehaviour
 
     private void DayListData()
     {
-        _allDayData = new List<DayDataSave>(new DayDataSave[DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)]);
+        AllDayData = new List<DayDataSave>(new DayDataSave[DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)]);
 
-        for (int i = 0; i < _allDayData.Count; i++)
+        for (int i = 0; i < AllDayData.Count; i++)
         {
-            _allDayData[i] = new DayDataSave();
-            _allDayData[i].Name = (i+1).ToString();
+            AllDayData[i] = new DayDataSave();
+            AllDayData[i].Name = (i+1).ToString();
         }
     }
 
-    public void SetDayData(int Day, int Times, char Shift)
+    public void SetDayData(int Day, int Times, char Shift, bool truancy)
     {
-        _allDayData[Day - 1].Day = Day;
-        _allDayData[Day - 1].Times = Times;
-        _allDayData[Day - 1].Shift = Shift;
+        AllDayData[Day - 1].Day = Day;
+        AllDayData[Day - 1].Times = Times;
+        AllDayData[Day - 1].Shift = Shift;
+        AllDayData[Day - 1].Truancy = truancy;
 
         MonthData();
         UpdateStats();
+        CalendarWorkingStats();
+
+    }
+
+    private void CalendarWorkingStats()
+    {
+        for (int i = 0; i < AllDayData.Count; i++)
+        {
+            _calendar.CalendarDayData(AllDayData[i], i);
+        }
     }
 
     public void RatePreferences(int TargetHour, float TargetMoney, float MoneyToHours)
@@ -130,9 +144,9 @@ public class WHData : MonoBehaviour
     {
         dataInt.HourToMonth = 0;
 
-        for (int i = 0; i < _allDayData.Count; i++)
+        for (int i = 0; i < AllDayData.Count; i++)
         {
-            dataInt.HourToMonth += _allDayData[i].Times;
+            dataInt.HourToMonth += AllDayData[i].Times;
 
             print(dataInt.HourToMonth);
         }
@@ -155,9 +169,9 @@ public class WHData : MonoBehaviour
         SWriter.WriteLine(dataFloatSave);
         SWriter.WriteLine(dataIntSave);
 
-        for (int i = 0; i < _allDayData.Count; i++)
+        for (int i = 0; i < AllDayData.Count; i++)
         {
-            string dataAllDaySave = JsonUtility.ToJson(_allDayData[i]);
+            string dataAllDaySave = JsonUtility.ToJson(AllDayData[i]);
             SWriter.WriteLine(dataAllDaySave);
         }
 
@@ -175,7 +189,7 @@ public class WHData : MonoBehaviour
 
             for (int i = 2; i < readed.Length; i++)
             {
-                _allDayData[i - 2] = JsonUtility.FromJson<DayDataSave>(readed[i]);
+                AllDayData[i - 2] = JsonUtility.FromJson<DayDataSave>(readed[i]);
             }
         }
     }

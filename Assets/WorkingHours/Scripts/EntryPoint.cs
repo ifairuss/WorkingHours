@@ -4,9 +4,10 @@ public class EntryPoint : MonoBehaviour
 {
     private void Start()
     {
-        WHData.Instance.Initialized();
-        ButtonActionInterface.Instance.Initialized();
         PreferencesAdd.Instance.Initilized();
+        WHData.Instance.Initialized();
+        StatisticAdd.Instance.Initialized();
         Calendar.Instance.Initialized();
+        ButtonActionInterface.Instance.Initialized();
     }
 }
