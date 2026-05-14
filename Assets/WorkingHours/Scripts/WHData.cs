@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,6 +33,7 @@ public class DayDataSave
 {
     public string Name;
 
+    public bool Truancy;
     public int Day;
     public int Times;
     public char Shift;
@@ -89,6 +91,16 @@ public class WHData : MonoBehaviour
         }
     }
 
+    public void SetDayData(int Day, int Times, char Shift)
+    {
+        _allDayData[Day - 1].Day = Day;
+        _allDayData[Day - 1].Times = Times;
+        _allDayData[Day - 1].Shift = Shift;
+
+        MonthData();
+        UpdateStats();
+    }
+
     public void RatePreferences(int TargetHour, float TargetMoney, float MoneyToHours)
     {
         dataIntApplication.TargetHourToMonth = TargetHour;
@@ -114,6 +126,25 @@ public class WHData : MonoBehaviour
         _moneyImage.fillAmount = (dataFloat.TotalMoneyInMonth / dataFloatApplication.TargetMoneyToMonth);
     }
 
+    private void MonthData()
+    {
+        dataInt.HourToMonth = 0;
+
+        for (int i = 0; i < _allDayData.Count; i++)
+        {
+            dataInt.HourToMonth += _allDayData[i].Times;
+
+            print(dataInt.HourToMonth);
+        }
+
+        dataFloat.TotalMoneyInMonth = 0;
+        dataFloat.TotalMoneyInMonth = (dataInt.HourToMonth * dataFloatApplication.MoneyToHour);
+        print(dataFloat.TotalMoneyInMonth);
+
+        MonthSaveData();
+
+    }
+
     public void MonthSaveData()
     {
         StreamWriter SWriter = new StreamWriter(Application.persistentDataPath + "/" + _fileName);
@@ -121,11 +152,14 @@ public class WHData : MonoBehaviour
         string dataFloatSave = JsonUtility.ToJson(dataFloat);
         string dataIntSave = JsonUtility.ToJson(dataInt);
 
-        print(dataFloatSave);
-        print(dataIntSave);
-
         SWriter.WriteLine(dataFloatSave);
         SWriter.WriteLine(dataIntSave);
+
+        for (int i = 0; i < _allDayData.Count; i++)
+        {
+            string dataAllDaySave = JsonUtility.ToJson(_allDayData[i]);
+            SWriter.WriteLine(dataAllDaySave);
+        }
 
         SWriter.Close();
     }
@@ -136,10 +170,12 @@ public class WHData : MonoBehaviour
         {
             string[] readed = File.ReadAllLines(Application.persistentDataPath + "/" + _fileName);
 
-            for (int i = 0; i < readed.Length; i++)
+            dataFloat = JsonUtility.FromJson<DataFloat>(readed[0]);
+            dataInt = JsonUtility.FromJson<DataInt>(readed[1]);
+
+            for (int i = 2; i < readed.Length; i++)
             {
-                dataFloat = JsonUtility.FromJson<DataFloat>(readed[0]);
-                dataInt = JsonUtility.FromJson<DataInt>(readed[1]);
+                _allDayData[i - 2] = JsonUtility.FromJson<DayDataSave>(readed[i]);
             }
         }
     }

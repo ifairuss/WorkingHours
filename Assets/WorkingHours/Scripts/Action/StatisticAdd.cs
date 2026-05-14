@@ -7,6 +7,7 @@ public class StatisticAdd : MonoBehaviour
 {
     [SerializeField] private int _workingTimeInDay;
     [SerializeField] private int _currentDay;
+    [SerializeField] private char _shift;
 
     [Header("Time preferences")]
     [SerializeField] private Slider _timeSlider;
@@ -19,8 +20,12 @@ public class StatisticAdd : MonoBehaviour
     [SerializeField] private Button _submitButton;
     [SerializeField] private GameObject _statisticMenu;
 
+    private WHData _data;
+
     public void Start()
     {
+        _data = GetComponent<WHData>();
+
         _submitButton.onClick.AddListener(() => { SubmitButton(); });
 
         _dayInputText.text = DateTime.Now.Day.ToString();
@@ -28,10 +33,7 @@ public class StatisticAdd : MonoBehaviour
 
     private void SubmitButton()
     {
-        print($"{_workingTimeInDay} Comlited");
-        print($"{_currentDay} Comlited");
-
-        print($"Add day menu closed");
+        _data.SetDayData(_currentDay, _workingTimeInDay, _shift);
         _statisticMenu.SetActive( false );
     }
 
