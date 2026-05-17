@@ -42,6 +42,11 @@ public class ButtonActionInterface : MonoBehaviour
         AllButtonAction();
     }
 
+    public void OpenFirstLoadMenu()
+    {
+        _allWindowContainers[1].Window.SetActive(true);
+    }
+
     private void ClosedAllWindowOnStart()
     {
         _allWindowContainers[0].Window.SetActive(false);

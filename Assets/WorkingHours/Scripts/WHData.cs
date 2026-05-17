@@ -16,6 +16,7 @@ public class DataFloatApplication
 public class DataIntApplication
 {
     public int TargetHourToMonth;
+    public bool FirstLoad;
 }
 
 public class DataFloat
@@ -45,6 +46,8 @@ public class WHData : MonoBehaviour
     public static WHData Instance { get; private set; }
 
     [SerializeField] private string _currency;
+
+    public bool AplicationFirstLoad;
 
     [Header("Indicator preferences")]
     [SerializeField] private TextMeshProUGUI _totalHourToMonthTextUI;
@@ -81,6 +84,8 @@ public class WHData : MonoBehaviour
         DayListData();
 
         UpdateStats();
+
+        AplicationFirstLoad = dataIntApplication.FirstLoad;
     }
 
     private void DayListData()
@@ -120,6 +125,7 @@ public class WHData : MonoBehaviour
         dataIntApplication.TargetHourToMonth = TargetHour;
         dataFloatApplication.MoneyToHour = MoneyToHours;
         dataFloatApplication.TargetMoneyToMonth = TargetMoney;
+        dataIntApplication.FirstLoad = true;
 
         PreferencesSaveData();
         MonthSaveData();

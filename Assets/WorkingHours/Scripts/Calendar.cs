@@ -9,6 +9,7 @@ public class AllDayInMonth
 {
     public GameObject _day;
     public Image _dayImage;
+    public TextMeshProUGUI _shiftChar;
 }
 
 public class Calendar : MonoBehaviour
@@ -74,21 +75,49 @@ public class Calendar : MonoBehaviour
 
     public void CalendarDayData(DayDataSave DayData, int i)
     {
+        _allDayInMonth[i]._shiftChar = _allDayInMonth[i]._dayImage.GetComponentInChildren<TextMeshProUGUI>();
+
         if (DayData.Shift == 'x')
         {
             _allDayInMonth[i]._dayImage.color = _monthsDayColor;
+            _allDayInMonth[i]._shiftChar.text = ""; 
         } 
         else if(DayData.Shift == 'T')
         {
             _allDayInMonth[i]._dayImage.color = _truancyDayColor;
+            _allDayInMonth[i]._shiftChar.text = "";
         }
         else if (DayData.Shift == 'W')
         {
             _allDayInMonth[i]._dayImage.color = _weekendDayColor;
+            _allDayInMonth[i]._shiftChar.text = "";
         }
         else 
         {
+            string ShiftChar = "";
+
+            if (DayData.Shift == 'Ⅰ')
+            {
+                ShiftChar = "I";
+            } 
+            else if (DayData.Shift == 'Ⅱ')
+            {
+                ShiftChar = "II";
+            }
+            else if (DayData.Shift == 'Ⅲ')
+            {
+                ShiftChar = "III";
+            }
+            else if (DayData.Shift == 'Ⅳ')
+            {
+                ShiftChar = "IV";
+            }
+            else
+            {
+                ShiftChar = DayData.Shift.ToString();
+            }
             _allDayInMonth[i]._dayImage.color = _workingDayColor;
+            _allDayInMonth[i]._shiftChar.text = ShiftChar;
         }
     }
 
