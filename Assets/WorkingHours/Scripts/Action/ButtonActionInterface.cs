@@ -38,13 +38,24 @@ public class ButtonActionInterface : MonoBehaviour
         _windowMenuisOpen = false;
 
         ClosedAllWindowOnStart();
-
         AllButtonAction();
+
+        if (PlayerPrefs.GetInt("ItFirstRun") == 0)
+        {
+            OpenFirstLoadMenu(true);
+
+            PlayerPrefs.SetInt("ItFirstRun", 1);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            OpenFirstLoadMenu(false);
+        }
     }
 
-    public void OpenFirstLoadMenu()
+    public void OpenFirstLoadMenu(bool open)
     {
-        _allWindowContainers[1].Window.SetActive(true);
+        _allWindowContainers[1].Window.SetActive(open);
     }
 
     private void ClosedAllWindowOnStart()
