@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 36717538}
   - component: {fileID: 36717537}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: Button-Submit-text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +642,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36717537
 MonoBehaviour:
@@ -2114,7 +2114,7 @@ GameObject:
   - component: {fileID: 121005630}
   - component: {fileID: 121005629}
   m_Layer: 0
-  m_Name: Name-Project
+  m_Name: Project-Logo-Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2283,7 +2283,7 @@ GameObject:
   - component: {fileID: 154067054}
   - component: {fileID: 154067053}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: Button-Preferences-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2355,7 +2355,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.35
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3659,7 +3659,7 @@ GameObject:
   - component: {fileID: 285203031}
   - component: {fileID: 285203030}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: Button_Language-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3704,10 +3704,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: .....
+  m_text: Language
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bba4c9fca2fd26944ad1e8d9795a5f1c, type: 2}
+  m_sharedMaterial: {fileID: -2823003160104868031, guid: bba4c9fca2fd26944ad1e8d9795a5f1c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3731,12 +3731,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 20
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 20
-  m_fontSizeMax: 25
+  m_fontSizeMin: 14
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -3931,6 +3931,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 301872660}
+  - component: {fileID: 301872661}
   m_Layer: 0
   m_Name: Localization-Manager
   m_TagString: Untagged
@@ -3953,6 +3954,123 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &301872661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301872659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ecfca532344cc4cabfd236f8808e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationManager
+  _allWords:
+  - {fileID: 2069839287}
+  - {fileID: 1156696553}
+  - {fileID: 385020572}
+  - {fileID: 1337257692}
+  - {fileID: 154067053}
+  - {fileID: 1946245593}
+  - {fileID: 1252066376}
+  - {fileID: 36717537}
+  - {fileID: 59398158}
+  - {fileID: 973056568}
+  - {fileID: 1306659437}
+  - {fileID: 1353578670}
+  - {fileID: 1999441810}
+  - {fileID: 757226826}
+  - {fileID: 1210449744}
+  - {fileID: 800991265}
+  - {fileID: 1437995151}
+  - {fileID: 429696055}
+  - {fileID: 880215512}
+  - {fileID: 1385607856}
+  - {fileID: 1678222666}
+  - {fileID: 2035581882}
+  - {fileID: 285203030}
+  _allLocalization:
+  - Name: English
+    Localization:
+    - Poland
+    - English
+    - Ukraine
+    - Language
+    - Preferences
+    - Add
+    - Submit
+    - Submit
+    - Write
+    - Write
+    - Write
+    - Write
+    - Preferences
+    - Day
+    - Add day
+    - Select day
+    - Select shift
+    - Money to hour
+    - Target money to month
+    - Target hour to month
+    - Working time
+    - Schedule
+    - Language
+    ButtonSwitchLanguage: {fileID: 0}
+  - Name: Ukraine
+    Localization:
+    - "\u041F\u043E\u043B\u044C\u0441\u044C\u043A\u0430"
+    - "\u0410\u043D\u0433\u043B\u0456\u0439\u0441\u044C\u043A\u0430"
+    - "\u0423\u043A\u0440\u0430\u0407\u043D\u0441\u044C\u043A\u0430"
+    - "\u041C\u043E\u0432\u0438"
+    - "\u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F"
+    - "\u0414\u043E\u0434\u0430\u0442\u0438"
+    - "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438"
+    - "\u041F\u0440\u0438\u0439\u043D\u044F\u0442\u0438"
+    - "\u041F\u0438\u0448\u0456\u0442\u044C"
+    - "\u041F\u0438\u0448\u0456\u0442\u044C"
+    - "\u041F\u0438\u0448\u0456\u0442\u044C"
+    - "\u041F\u0438\u0448\u0456\u0442\u044C"
+    - "\u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F"
+    - "\u0414\u0435\u043D\u044C"
+    - "\u0414\u043E\u0434\u0430\u0442\u0438 \u0434\u0435\u043D\u044C"
+    - "\u0412\u0438\u0431\u0440\u0430\u0442\u0438 \u0434\u0435\u043D\u044C"
+    - "\u0412\u0438\u0431\u0440\u0430\u0442\u0438 \u0437\u043C\u0456\u043D\u043D\u0443"
+    - "\u0413\u0440\u043E\u0448\u0456 \u0432 \u0433\u043E\u0434\u0438\u043D\u0443"
+    - "\u0426\u0456\u043B\u044C \u0433\u0440\u043E\u0448\u0435\u0439 \u0443 \u043C\u0456\u0441\u044F\u0446\u044C"
+    - "\u0426\u0456\u043B\u044C \u0433\u043E\u0434\u0438\u043D \u0443 \u043C\u0456\u0441\u044F\u0446\u044C"
+    - "\u0420\u043E\u0431\u043E\u0447\u0456 \u0433\u043E\u0434\u0438\u043D\u0438"
+    - "\u0413\u0440\u0430\u0444\u0456\u043A"
+    - "\u041C\u043E\u0432\u0438"
+    ButtonSwitchLanguage: {fileID: 0}
+  - Name: Poland
+    Localization:
+    - Polski
+    - Angielski
+    - "Ukrai\u0144ski"
+    - "J\u0119zyki"
+    - Ustawienia
+    - "Doda\u0107"
+    - "Przyj\u0105\u0107"
+    - "Przyj\u0105\u0107"
+    - "Pisa\u0107"
+    - "Pisa\u0107"
+    - "Pisa\u0107"
+    - "Pisa\u0107"
+    - Ustawienia
+    - "Dzie\u0144"
+    - "Dodaj dzie\u0144"
+    - "Wybierz dzie\u0144"
+    - "Wybierz zmienn\u0105"
+    - "Pieni\u0105dze za godzin\u0119"
+    - "Miesi\u0119czny cel finansowy"
+    - "Docelowa liczba godzin na miesi\u0105c"
+    - Godziny pracy
+    - Harmonogram
+    - "J\u0119zyki"
+    ButtonSwitchLanguage: {fileID: 0}
+  _languageWindow: {fileID: 1393947183}
+  data: {fileID: 822726892}
 --- !u!1 &341898236
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,7 +4280,7 @@ GameObject:
   - component: {fileID: 346641079}
   - component: {fileID: 346641078}
   m_Layer: 0
-  m_Name: TargetMoney
+  m_Name: TargetMoney-noTranslate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4581,6 +4699,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365758564}
   m_CullTransparentMesh: 1
+--- !u!114 &385020572 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9012398789953435375, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+  m_PrefabInstance: {fileID: 597432741881929058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &386549073
 GameObject:
   m_ObjectHideFlags: 0
@@ -5158,8 +5287,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.4983539, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: 0}
-  m_SizeDelta: {x: -25, y: 0}
+  m_AnchoredPosition: {x: 7.5, y: 0}
+  m_SizeDelta: {x: -35, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &429696055
 MonoBehaviour:
@@ -5215,7 +5344,7 @@ MonoBehaviour:
   m_fontSizeMin: 25
   m_fontSizeMax: 45
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -7950,7 +8079,7 @@ GameObject:
   - component: {fileID: 661990102}
   - component: {fileID: 661990101}
   m_Layer: 0
-  m_Name: TargetHour
+  m_Name: TargetHour-noTranslate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8997,7 +9126,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 45
   m_fontSizeMax: 55
-  m_fontStyle: 0
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -9669,7 +9798,7 @@ GameObject:
   - component: {fileID: 800991266}
   - component: {fileID: 800991265}
   m_Layer: 0
-  m_Name: Title-text
+  m_Name: SelectDay-Title-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9747,7 +9876,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -9910,9 +10039,12 @@ MonoBehaviour:
     Window: {fileID: 1990333739}
   - Name: Add-Day
     Window: {fileID: 2036970548}
+  - Name: Language
+    Window: {fileID: 1393947183}
   _windowButton: {fileID: 235541206}
   _preferencesButton: {fileID: 448925091}
   _addDayButton: {fileID: 1717314115}
+  _languageButton: {fileID: 1360316361}
   _menuAnimationScript: {fileID: 235541209}
   _menuContainer: {fileID: 1751757741}
 --- !u!4 &822726890
@@ -10061,7 +10193,7 @@ GameObject:
   - component: {fileID: 829732596}
   - component: {fileID: 829732595}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10234,7 +10366,7 @@ GameObject:
   - component: {fileID: 860074512}
   - component: {fileID: 860074511}
   m_Layer: 0
-  m_Name: Date
+  m_Name: Date-noTranslate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10371,7 +10503,7 @@ GameObject:
   - component: {fileID: 860105659}
   - component: {fileID: 860105658}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10727,8 +10859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.4983539, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: 0}
-  m_SizeDelta: {x: -25, y: 0}
+  m_AnchoredPosition: {x: 7.5, y: 0}
+  m_SizeDelta: {x: -35, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &880215512
 MonoBehaviour:
@@ -10750,9 +10882,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Target Money
-
-    To Month'
+  m_text: Target money to month
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bba4c9fca2fd26944ad1e8d9795a5f1c, type: 2}
   m_sharedMaterial: {fileID: -2823003160104868031, guid: bba4c9fca2fd26944ad1e8d9795a5f1c, type: 2}
@@ -10786,7 +10916,7 @@ MonoBehaviour:
   m_fontSizeMin: 25
   m_fontSizeMax: 45
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -11405,7 +11535,7 @@ GameObject:
   - component: {fileID: 920337415}
   - component: {fileID: 920337414}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12289,13 +12419,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
+  m_fontSize: 25
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 25
-  m_fontSizeMax: 35
-  m_fontStyle: 3
+  m_fontSizeMin: 15
+  m_fontSizeMax: 25
+  m_fontStyle: 19
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -12354,7 +12484,7 @@ GameObject:
   - component: {fileID: 979126212}
   - component: {fileID: 979126211}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12767,6 +12897,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029018509}
+  m_CullTransparentMesh: 1
+--- !u!1 &1056383566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056383567}
+  - component: {fileID: 1056383569}
+  - component: {fileID: 1056383568}
+  m_Layer: 0
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1056383567
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056383566}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1360316360}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -2.5}
+  m_SizeDelta: {x: -30, y: -25}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1056383568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056383566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e2c794ca1c01b6c4299ce9374cc1e363, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1056383569
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056383566}
   m_CullTransparentMesh: 1
 --- !u!1 &1059409939
 GameObject:
@@ -13223,7 +13428,7 @@ GameObject:
   - component: {fileID: 1094638986}
   - component: {fileID: 1094638985}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13955,6 +14160,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141549551}
   m_CullTransparentMesh: 1
+--- !u!114 &1156696553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9012398789953435375, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+  m_PrefabInstance: {fileID: 3523996154131932809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1159466601
 GameObject:
   m_ObjectHideFlags: 0
@@ -14482,7 +14698,7 @@ GameObject:
   - component: {fileID: 1210449745}
   - component: {fileID: 1210449744}
   m_Layer: 0
-  m_Name: Title-Text
+  m_Name: AddDay-Title-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14505,7 +14721,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -150, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210449744
 MonoBehaviour:
@@ -14560,7 +14776,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 50
   m_fontSizeMax: 75
-  m_fontStyle: 1
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -14894,7 +15110,7 @@ GameObject:
   - component: {fileID: 1252066377}
   - component: {fileID: 1252066376}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: Button-Submit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14917,7 +15133,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252066376
 MonoBehaviour:
@@ -16246,13 +16462,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
+  m_fontSize: 25
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 25
-  m_fontSizeMax: 35
-  m_fontStyle: 3
+  m_fontSizeMin: 15
+  m_fontSizeMax: 25
+  m_fontStyle: 19
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -16311,7 +16527,7 @@ GameObject:
   - component: {fileID: 1337257693}
   - component: {fileID: 1337257692}
   m_Layer: 0
-  m_Name: Title-Text
+  m_Name: Localization-Title-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16585,7 +16801,7 @@ GameObject:
   - component: {fileID: 1345160362}
   - component: {fileID: 1345160361}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17059,7 +17275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: write here
+  m_text: write
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bba4c9fca2fd26944ad1e8d9795a5f1c, type: 2}
   m_sharedMaterial: {fileID: -2823003160104868031, guid: bba4c9fca2fd26944ad1e8d9795a5f1c, type: 2}
@@ -17086,13 +17302,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
+  m_fontSize: 25
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 25
-  m_fontSizeMax: 35
-  m_fontStyle: 3
+  m_fontSizeMin: 15
+  m_fontSizeMax: 25
+  m_fontStyle: 19
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -17289,12 +17505,12 @@ GameObject:
   - component: {fileID: 1360316362}
   - component: {fileID: 1360316361}
   m_Layer: 0
-  m_Name: ComingSun....
+  m_Name: Language-Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1360316360
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17308,6 +17524,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 285203029}
+  - {fileID: 1056383567}
   m_Father: {fileID: 259831833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.51810706, y: 0}
@@ -17372,7 +17589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.19607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17699,8 +17916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.4983539, y: 1}
-  m_AnchoredPosition: {x: 2.5, y: 0}
-  m_SizeDelta: {x: -25, y: 0}
+  m_AnchoredPosition: {x: 7.5, y: 0}
+  m_SizeDelta: {x: -35, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1385607856
 MonoBehaviour:
@@ -17722,7 +17939,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Target Hour \nto month"
+  m_text: Target Hour to month
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bba4c9fca2fd26944ad1e8d9795a5f1c, type: 2}
   m_sharedMaterial: {fileID: -2823003160104868031, guid: bba4c9fca2fd26944ad1e8d9795a5f1c, type: 2}
@@ -17756,7 +17973,7 @@ MonoBehaviour:
   m_fontSizeMin: 25
   m_fontSizeMax: 45
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -17819,7 +18036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1393947184
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18242,7 +18459,7 @@ GameObject:
   - component: {fileID: 1437995152}
   - component: {fileID: 1437995151}
   m_Layer: 0
-  m_Name: Title-text
+  m_Name: SelectShift-Title-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19178,7 +19395,7 @@ GameObject:
   - component: {fileID: 1513302719}
   - component: {fileID: 1513302718}
   m_Layer: 0
-  m_Name: Time
+  m_Name: Time-noTranslate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19531,7 +19748,7 @@ GameObject:
   - component: {fileID: 1528033339}
   - component: {fileID: 1528033338}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19668,7 +19885,7 @@ GameObject:
   - component: {fileID: 1530902697}
   - component: {fileID: 1530902696}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19805,7 +20022,7 @@ GameObject:
   - component: {fileID: 1533252886}
   - component: {fileID: 1533252885}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19942,7 +20159,7 @@ GameObject:
   - component: {fileID: 1542809696}
   - component: {fileID: 1542809695}
   m_Layer: 0
-  m_Name: Moneys
+  m_Name: Moneys-noTranslate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21495,7 +21712,7 @@ GameObject:
   - component: {fileID: 1678222667}
   - component: {fileID: 1678222666}
   m_Layer: 0
-  m_Name: Title-text
+  m_Name: WorkingTime-Title-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21573,7 +21790,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -22551,6 +22768,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8942892845414498053, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
   m_PrefabInstance: {fileID: 3523996154131932809}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1730671275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4329600178960956668, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+  m_PrefabInstance: {fileID: 3523996154131932809}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1742159346
 GameObject:
   m_ObjectHideFlags: 0
@@ -23159,7 +23387,7 @@ GameObject:
   - component: {fileID: 1775882298}
   - component: {fileID: 1775882297}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24262,7 +24490,7 @@ GameObject:
   - component: {fileID: 1859651914}
   - component: {fileID: 1859651913}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25165,7 +25393,7 @@ GameObject:
   - component: {fileID: 1946245594}
   - component: {fileID: 1946245593}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: Button-ADD-text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25794,7 +26022,7 @@ GameObject:
   - component: {fileID: 1999441811}
   - component: {fileID: 1999441810}
   m_Layer: 0
-  m_Name: Title-Text
+  m_Name: Preferences-Title-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25817,7 +26045,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -150, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1999441810
 MonoBehaviour:
@@ -25872,7 +26100,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 50
   m_fontSizeMax: 75
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -26145,7 +26373,7 @@ GameObject:
   - component: {fileID: 2035581883}
   - component: {fileID: 2035581882}
   m_Layer: 0
-  m_Name: Title
+  m_Name: SCHEDULE-Title-Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26167,8 +26395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -7.500001}
-  m_SizeDelta: {x: 0, y: -14.999999}
+  m_AnchoredPosition: {x: 0, y: -7.5}
+  m_SizeDelta: {x: -40, y: -15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035581882
 MonoBehaviour:
@@ -26217,13 +26445,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 55
   m_fontSizeBase: 60
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 17
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 55
+  m_fontSizeMax: 60
+  m_fontStyle: 33
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -26975,6 +27203,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065228776}
   m_CullTransparentMesh: 1
+--- !u!114 &2069839287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9012398789953435375, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+  m_PrefabInstance: {fileID: 2511682609750565500}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &2071458910
 GameObject:
   m_ObjectHideFlags: 0
@@ -27322,7 +27561,7 @@ GameObject:
   - component: {fileID: 2084152580}
   - component: {fileID: 2084152579}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27673,7 +27912,7 @@ GameObject:
   - component: {fileID: 2096693971}
   - component: {fileID: 2096693970}
   m_Layer: 0
-  m_Name: Hours
+  m_Name: Hours-noTranslate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27810,7 +28049,7 @@ GameObject:
   - component: {fileID: 2109004601}
   - component: {fileID: 2109004600}
   m_Layer: 0
-  m_Name: Button-Text
+  m_Name: DontWorkButton_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28227,6 +28466,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ukraine
       objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 301872661}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LocalizationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8942892845414498053, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -28311,6 +28582,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Ukraine
       objectReference: {fileID: 0}
+    - target: {fileID: 9064674352086017895, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_Name
+      value: Ukraine-Name-Text
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28327,6 +28602,42 @@ PrefabInstance:
     - target: {fileID: 3970219362530496905, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
       propertyPath: m_Name
       value: Poland
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 1730671275}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 301872661}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LocalizationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8942892845414498053, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
       propertyPath: m_Pivot.x
@@ -28408,6 +28719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9064674352086017895, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_Name
+      value: Poland-Name-Text
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28428,6 +28743,34 @@ PrefabInstance:
     - target: {fileID: 3970219362530496905, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
       propertyPath: m_Name
       value: English
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 301872661}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LocalizationManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809729121448233044, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8942892845414498053, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
       propertyPath: m_Pivot.x
@@ -28512,6 +28855,10 @@ PrefabInstance:
     - target: {fileID: 9012398789953435375, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
       propertyPath: m_text
       value: English
+      objectReference: {fileID: 0}
+    - target: {fileID: 9064674352086017895, guid: 051d9e1e24bcae24d983e1604d8b98a9, type: 3}
+      propertyPath: m_Name
+      value: English-Name-Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

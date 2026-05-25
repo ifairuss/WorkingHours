@@ -15,6 +15,7 @@ public class DataFloatApplication
 public class DataIntApplication
 {
     public int TargetHourToMonth;
+    public int LanguageIndex;
 }
 
 public class DataFloat
@@ -43,6 +44,8 @@ public class WHData : MonoBehaviour
 {
     public static WHData Instance { get; private set; }
 
+    public int LanguageIndex { get; set; }
+
     [SerializeField] private string _currency;
 
     [Header("Indicator preferences")]
@@ -69,6 +72,7 @@ public class WHData : MonoBehaviour
 
     private string[] _month = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
+
     private void Awake()
     {
         Instance = this;
@@ -80,6 +84,8 @@ public class WHData : MonoBehaviour
 
         DayListData();
         UpdateStats();
+
+        LanguageIndex = dataIntApplication.LanguageIndex;
     }
 
     private void DayListData()
@@ -112,6 +118,15 @@ public class WHData : MonoBehaviour
         {
             _calendar.CalendarDayData(AllDayData[i], i);
         }
+    }
+
+    public void SaveData()
+    {
+        dataIntApplication.LanguageIndex = LanguageIndex;
+
+        PreferencesSaveData();
+        MonthSaveData();
+        UpdateStats();
     }
 
     public void RatePreferences(int TargetHour, float TargetMoney, float MoneyToHours)
