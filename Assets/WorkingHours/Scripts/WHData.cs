@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +15,7 @@ public class DataFloatApplication
 public class DataIntApplication
 {
     public int TargetHourToMonth;
-    public bool FirstLoad;
+    public int LanguageIndex;
 }
 
 public class DataFloat
@@ -45,9 +44,9 @@ public class WHData : MonoBehaviour
 {
     public static WHData Instance { get; private set; }
 
-    [SerializeField] private string _currency;
+    public int LanguageIndex { get; set; }
 
-    public bool AplicationFirstLoad;
+    [SerializeField] private string _currency;
 
     [Header("Indicator preferences")]
     [SerializeField] private TextMeshProUGUI _totalHourToMonthTextUI;
@@ -73,6 +72,7 @@ public class WHData : MonoBehaviour
 
     private string[] _month = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
+
     private void Awake()
     {
         Instance = this;
@@ -81,11 +81,11 @@ public class WHData : MonoBehaviour
     public void Initialized()
     {
         _fileName = $"{_month[DateTime.Now.Month - 1]}{DateTime.Now.Year}";
-        DayListData();
 
+        DayListData();
         UpdateStats();
 
-        AplicationFirstLoad = dataIntApplication.FirstLoad;
+        LanguageIndex = dataIntApplication.LanguageIndex;
     }
 
     private void DayListData()
@@ -120,12 +120,20 @@ public class WHData : MonoBehaviour
         }
     }
 
+    public void SaveData()
+    {
+        dataIntApplication.LanguageIndex = LanguageIndex;
+
+        PreferencesSaveData();
+        MonthSaveData();
+        UpdateStats();
+    }
+
     public void RatePreferences(int TargetHour, float TargetMoney, float MoneyToHours)
     {
         dataIntApplication.TargetHourToMonth = TargetHour;
         dataFloatApplication.MoneyToHour = MoneyToHours;
         dataFloatApplication.TargetMoneyToMonth = TargetMoney;
-        dataIntApplication.FirstLoad = true;
 
         PreferencesSaveData();
         MonthSaveData();
