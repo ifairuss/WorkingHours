@@ -2781,10 +2781,10 @@ TextureImporter:
       name: Flags_Atlas_0
       rect:
         serializedVersion: 2
-        x: 1292
-        y: 134
-        width: 83
-        height: 49
+        x: 1294
+        y: 136
+        width: 79
+        height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2803,10 +2803,10 @@ TextureImporter:
       name: Flags_Atlas_1
       rect:
         serializedVersion: 2
-        x: 26
-        y: 51
-        width: 83
-        height: 49
+        x: 28
+        y: 52
+        width: 80
+        height: 46
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2825,12 +2825,12 @@ TextureImporter:
       name: Flags_Atlas_2
       rect:
         serializedVersion: 2
-        x: 1003
-        y: 467
-        width: 85
-        height: 50
+        x: 1005
+        y: 469
+        width: 81
+        height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
