@@ -21,6 +21,7 @@ public class ButtonActionInterface : MonoBehaviour
     [SerializeField] private Button _windowButton;
     [SerializeField] private Button _preferencesButton;
     [SerializeField] private Button _addDayButton;
+    [SerializeField] private Button _addDayFastButton;
     [SerializeField] private Button _languageButton;
     [SerializeField] private MenuButtonAnimations _menuAnimationScript;
 
@@ -87,6 +88,7 @@ public class ButtonActionInterface : MonoBehaviour
 
         _preferencesButton.onClick.AddListener(() => { _allWindowContainers[1].Window.SetActive(true); });
         _addDayButton.onClick.AddListener(() => { _allWindowContainers[2].Window.SetActive(true); });
+        _addDayFastButton.onClick.AddListener(() => { _allWindowContainers[2].Window.SetActive(true); });
         _languageButton.onClick.AddListener(() => { _allWindowContainers[3].Window.SetActive(true); });
     }
 }
