@@ -62,10 +62,12 @@ public class WHData : MonoBehaviour
     [Header("Calendr preferences")]
     [SerializeField] private Calendar _calendar;
 
-    private DataFloat dataFloat = new DataFloat();
     private DataFloatApplication dataFloatApplication = new DataFloatApplication();
     private DataIntApplication dataIntApplication = new DataIntApplication();
     private DataInt dataInt = new DataInt();
+    private DataFloat dataFloat = new DataFloat();
+
+    private SavesManager _savesManager;
 
     private string _fileName;
     private string _fileNameApplicationSave = "Application Save";
@@ -81,6 +83,10 @@ public class WHData : MonoBehaviour
     public void Initialized()
     {
         _fileName = $"{_month[DateTime.Now.Month - 1]}{DateTime.Now.Year}";
+
+        _savesManager = GetComponent<SavesManager>();
+
+        _savesManager.MonthAdd(_month);
 
         DayListData();
         UpdateStats();
