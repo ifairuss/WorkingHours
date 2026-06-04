@@ -49,7 +49,10 @@ public class WHData : MonoBehaviour
 
     public int LanguageIndex { get; set; }
 
-    [SerializeField] private string _currency;
+    [Header("Currency preferences")]
+    [SerializeField] private List<string> _currencyVariable;
+
+    public static string Currency;
 
     [Header("Indicator preferences")]
     [SerializeField] private TextMeshProUGUI _totalHourToMonthTextUI;
@@ -86,6 +89,8 @@ public class WHData : MonoBehaviour
     public void Initialized()
     {
         _fileName = $"{_month[DateTime.Now.Month - 1]}{DateTime.Now.Year}";
+
+        Currency = _currencyVariable[0];
 
         _savesManager = GetComponent<SavesManager>();
         _savesManager.MonthAdd(_month);
@@ -154,9 +159,9 @@ public class WHData : MonoBehaviour
         MonthLoadData();
 
         _totalHourToMonthTextUI.text = $"{dataInt.HourToMonth.ToString()}h";
-        _totalMoneyToMonthTextUI.text = $"{dataFloat.TotalMoneyInMonth.ToString()}{_currency}";
+        _totalMoneyToMonthTextUI.text = $"{dataFloat.TotalMoneyInMonth.ToString()}{Currency}";
         _targetHourToMonthTextUI.text = $"{dataIntApplication.TargetHourToMonth}h";
-        _targetMoneyToMonthTextUI.text = $"{dataFloatApplication.TargetMoneyToMonth}{_currency}";
+        _targetMoneyToMonthTextUI.text = $"{dataFloatApplication.TargetMoneyToMonth}{Currency}";
 
         _timeImage.fillAmount = ((float)dataInt.HourToMonth / (float)dataIntApplication.TargetHourToMonth);
         _moneyImage.fillAmount = (dataFloat.TotalMoneyInMonth / dataFloatApplication.TargetMoneyToMonth);

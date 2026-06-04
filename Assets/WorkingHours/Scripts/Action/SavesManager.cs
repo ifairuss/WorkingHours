@@ -35,6 +35,10 @@ public class SavesManager : MonoBehaviour
             SavesButton[12].SavesName = SavesDataMonth[12].SavesName;
 
             SavesButton[i].MonthName.text = month[i];
+            SavesButton[i].UpdateData();
+
+            SavesButton[12].MonthName.text = month[0];
+            SavesButton[12].UpdateData();
         }
     }
 }

@@ -2,11 +2,10 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SavesButtonData : MonoBehaviour
 {
-    public Button DownloadFileButton;
+    public TextMeshProUGUI TotalMoneyToMonth;
     public TextMeshProUGUI TotalHoursText;
     public TextMeshProUGUI MonthName;
 
@@ -18,10 +17,12 @@ public class SavesButtonData : MonoBehaviour
 
     public string SavesName;
 
-    public void Start()
+    public void UpdateData()
     {
         LoadSavesData();
+
         TotalHoursText.text = $"{dataInt.HourToMonth}h";
+        TotalMoneyToMonth.text = $"{dataFloat.TotalMoneyInMonth}{WHData.Currency}";
     }
 
     private void LoadSavesData()
@@ -36,6 +37,7 @@ public class SavesButtonData : MonoBehaviour
             for (int i = 2; i < readed.Length; i++)
             {
                 _allDayData[i - 2] = JsonUtility.FromJson<DayDataSave>(readed[i]);
+
             }
         }
     }
