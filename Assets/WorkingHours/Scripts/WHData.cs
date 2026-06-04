@@ -12,17 +12,20 @@ public class DataFloatApplication
     public float TargetMoneyToMonth;
 }
 
+[Serializable]
 public class DataIntApplication
 {
     public int TargetHourToMonth;
     public int LanguageIndex;
 }
 
+[Serializable]
 public class DataFloat
 {
     public float TotalMoneyInMonth;
 }
 
+[Serializable]
 public class DataInt
 {
     public int HourToMonth;
@@ -85,7 +88,6 @@ public class WHData : MonoBehaviour
         _fileName = $"{_month[DateTime.Now.Month - 1]}{DateTime.Now.Year}";
 
         _savesManager = GetComponent<SavesManager>();
-
         _savesManager.MonthAdd(_month);
 
         DayListData();

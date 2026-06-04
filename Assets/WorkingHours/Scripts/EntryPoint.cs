@@ -4,8 +4,6 @@ public class EntryPoint : MonoBehaviour
 {
     private void Start()
     {
-
-
         PreferencesAdd.Instance.Initilized();
         WHData.Instance.Initialized();
         LocalizationManager.Instance.Initialized();
