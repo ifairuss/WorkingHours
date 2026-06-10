@@ -24,11 +24,11 @@ public class Calendar : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _timeText;
 
     [Header("Day stats color preferences")]
-    [SerializeField] private Color _workingDayColor;
-    [SerializeField] private Color _weekendDayColor;
-    [SerializeField] private Color _truancyDayColor;
-    [SerializeField] private Color _excessiveDayColor;
-    [SerializeField] private Color _monthsDayColor;
+    public Color WorkingDayColor;
+    public Color WeekendDayColor;
+    public Color TruancyDayColor;
+    public Color ExcessiveDayColor;
+    public Color MonthsDayColor;
 
     private string Month;
     private string Year;
@@ -57,7 +57,7 @@ public class Calendar : MonoBehaviour
             Image imageStats = _allDayInMonth[i]._dayImage;
             TextMeshProUGUI dateText = _allDayInMonth[i]._day.GetComponentInChildren<TextMeshProUGUI>();
 
-            imageStats.color = _monthsDayColor;
+            imageStats.color = MonthsDayColor;
             dateText.color = Color.white;
         }
     }
@@ -79,18 +79,18 @@ public class Calendar : MonoBehaviour
 
         if (DayData.Shift == 'x')
         {
-            _allDayInMonth[i]._dayImage.color = _monthsDayColor;
+            _allDayInMonth[i]._dayImage.color = MonthsDayColor;
             _allDayInMonth[i]._shiftChar.text = ""; 
         } 
         else if(DayData.Shift == 'T')
         {
-            _allDayInMonth[i]._dayImage.color = _truancyDayColor;
+            _allDayInMonth[i]._dayImage.color = TruancyDayColor;
             _allDayInMonth[i]._shiftChar.text = "";
         }
         else if (DayData.Shift == 'W')
         {
-            _allDayInMonth[i]._dayImage.color = _weekendDayColor;
-            _allDayInMonth[i]._shiftChar.text = "";
+            _allDayInMonth[i]._dayImage.color = WeekendDayColor;
+            _allDayInMonth[i]._shiftChar.text = "UW";
         }
         else 
         {
@@ -116,7 +116,7 @@ public class Calendar : MonoBehaviour
             {
                 ShiftChar = DayData.Shift.ToString();
             }
-            _allDayInMonth[i]._dayImage.color = _workingDayColor;
+            _allDayInMonth[i]._dayImage.color = WorkingDayColor;
             _allDayInMonth[i]._shiftChar.text = ShiftChar;
         }
     }
@@ -128,8 +128,8 @@ public class Calendar : MonoBehaviour
             Image imageStats = _allDayInMonth[i]._dayImage;
             TextMeshProUGUI dateText = _allDayInMonth[i]._day.GetComponentInChildren<TextMeshProUGUI>();
 
-            imageStats.color = _excessiveDayColor;
-            dateText.color = _excessiveDayColor;
+            imageStats.color = ExcessiveDayColor;
+            dateText.color = ExcessiveDayColor;
         }
     }
 }

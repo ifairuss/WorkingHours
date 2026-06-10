@@ -37,6 +37,7 @@ public class StatisticAdd : MonoBehaviour
     [Header("Other preferences")]
     [SerializeField] private Button _submitButton;
     [SerializeField] private GameObject _statisticMenu;
+    [SerializeField] private List<SavesButtonData> _savesData;
 
     private WHData _data;
 
@@ -98,6 +99,11 @@ public class StatisticAdd : MonoBehaviour
         {
             _data.SetDayData(_currentDay, _workingTimeInDay, _shift, _allShiftButton[8].Select);
             _statisticMenu.SetActive(false);
+        }
+
+        for (int i = 0; i < _savesData.Count; i++)
+        {
+            _savesData[i].UpdateData();
         }
     }
 

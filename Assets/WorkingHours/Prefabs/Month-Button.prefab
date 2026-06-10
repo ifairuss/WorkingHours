@@ -428,166 +428,167 @@ MonoBehaviour:
   TotalMoneyToMonth: {fileID: 4453196960090182451}
   TotalHoursText: {fileID: 3496033438882177976}
   MonthName: {fileID: 3374183604501678674}
+  AllDaysData:
+  - Name: 1
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 2
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 3
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 4
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 5
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 6
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 7
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 8
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 9
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 10
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 11
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 12
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 13
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 14
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 15
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 16
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 17
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 18
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 19
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 20
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 21
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 22
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 23
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 24
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 25
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 26
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 27
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 28
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 29
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 30
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  - Name: 31
+    Truancy: 0
+    Day: 0
+    Times: 0
+    Shift: 0
+  Index: 0
   dataInt:
     HourToMonth: 0
   dataFloat:
     TotalMoneyInMonth: 0
-  _allDayData:
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
-  - Name: 
-    Truancy: 0
-    Day: 0
-    Times: 0
-    Shift: 0
   SavesName: 
 --- !u!1 &7206135983771793721
 GameObject:

@@ -21,12 +21,24 @@ public class SavesManager : MonoBehaviour
             if (DateTime.Now.Month >= 2 && DateTime.Now.Day >= 1)
             {
                 SavesDataMonth[i].SavesName = $"{month[i]}{DateTime.Now.Year}";
+                SavesButton[i].Year = DateTime.Now.Year;
+                SavesButton[i].Month = i+1;
                 SavesDataMonth[12].SavesName = $"{month[0]}{DateTime.Now.Year + 1}";
+                SavesButton[12].Year = DateTime.Now.Year + 1;
+                SavesButton[12].Month = 1;
+                SavesButton[i].MonthName.text = $"{month[i]}                      {DateTime.Now.Year}";
+                SavesButton[12].MonthName.text = $"{month[0]}                      {DateTime.Now.Year + 1}";
             }
             else
             {
                 SavesDataMonth[i].SavesName = $"{month[i]}{DateTime.Now.Year - 1}";
+                SavesButton[i].Year = DateTime.Now.Year - 1;
+                SavesButton[i].Month = i + 1;
                 SavesDataMonth[12].SavesName = $"{month[0]}{DateTime.Now.Year}";
+                SavesButton[i].Year = DateTime.Now.Year;
+                SavesButton[i].Month = 1;
+                SavesButton[i].MonthName.text = $"{month[i]}                      {DateTime.Now.Year + 1}";
+                SavesButton[12].MonthName.text = $"{month[0]}                      {DateTime.Now.Year}";
             }
 
             SavesDataMonth[i].ButtonData = SavesButton[i];
@@ -34,11 +46,11 @@ public class SavesManager : MonoBehaviour
             SavesDataMonth[12].ButtonData = SavesButton[12];
             SavesButton[12].SavesName = SavesDataMonth[12].SavesName;
 
-            SavesButton[i].MonthName.text = month[i];
             SavesButton[i].UpdateData();
+            SavesButton[i].MonthNameSchedule = month[i];
 
-            SavesButton[12].MonthName.text = month[0];
             SavesButton[12].UpdateData();
+            SavesButton[12].MonthNameSchedule = month[0];
         }
     }
 }
